@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import dotenv from 'dotenv'; 
+import MainRouter from './routes';
 
 dotenv.config();
 
@@ -16,5 +17,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/', (req: Request, res: Response ) => {
     res.status(200).send({data: 'Express Ready'});
 });
+
+app.use('/api', MainRouter)
 
 app.listen(port, () => console.log(`Server is listening on port ${port}!`));
