@@ -5,7 +5,7 @@ const MainRouter = express.Router();
 
 MainRouter.get('/', (_: Request, res: Response) => {
   res.json({
-    messahe: 'Main Router Is Ready',
+    message: 'Main Router Is Ready',
   });
 });
 
